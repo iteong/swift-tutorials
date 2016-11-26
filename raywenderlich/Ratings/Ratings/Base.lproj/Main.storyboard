@@ -9,22 +9,68 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Players View Controller Table View Controller-->
         <scene sceneID="raX-yb-sHJ">
             <objects>
-                <tableViewController id="7qR-xP-OIu" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="By1-K3-ZAh">
+                <tableViewController id="7qR-xP-OIu" customClass="PlayersViewControllerTableViewController" customModule="Ratings" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="By1-K3-ZAh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="caT-MK-j14">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="60" id="caT-MK-j14" customClass="PlayerCell" customModule="Ratings" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="caT-MK-j14" id="aQD-aV-qRe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cwi-xJ-3Tg">
+                                            <rect key="frame" x="20" y="0.0" width="302" height="60"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Qde-Pq-eP5">
+                                                    <rect key="frame" x="0.0" y="4" width="69" height="52"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQx-sf-VhL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="69" height="30.5"/>
+                                                            <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="26"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GC6-HL-gzd">
+                                                            <rect key="frame" x="0.0" y="30.5" width="48" height="21.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <size key="shadowOffset" width="3" height="-1"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <imageView userInteractionEnabled="NO" tag="102" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zVg-zr-jNu">
+                                                    <rect key="frame" x="221" y="4" width="81" height="52"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="81" id="X70-T3-DO4"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zVg-zr-jNu" firstAttribute="top" secondItem="cwi-xJ-3Tg" secondAttribute="top" constant="4" id="TLL-Rg-H6D"/>
+                                                <constraint firstItem="zVg-zr-jNu" firstAttribute="top" secondItem="Qde-Pq-eP5" secondAttribute="top" id="jbS-gx-wGN"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cwi-xJ-3Tg" firstAttribute="leading" secondItem="aQD-aV-qRe" secondAttribute="leading" constant="20" id="HQN-Rz-fcA"/>
+                                        <constraint firstAttribute="trailing" secondItem="cwi-xJ-3Tg" secondAttribute="trailing" constant="20" id="Lbj-Cb-q37"/>
+                                        <constraint firstAttribute="bottom" secondItem="cwi-xJ-3Tg" secondAttribute="bottom" id="so3-Xy-4MV"/>
+                                        <constraint firstItem="cwi-xJ-3Tg" firstAttribute="top" secondItem="aQD-aV-qRe" secondAttribute="top" id="x7l-zn-muV"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="gameLabel" destination="GC6-HL-gzd" id="rmK-ee-tzN"/>
+                                    <outlet property="nameLabel" destination="SQx-sf-VhL" id="G1q-C6-6vo"/>
+                                    <outlet property="ratingImageView" destination="zVg-zr-jNu" id="W4s-PC-exL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
